@@ -21,7 +21,7 @@ class _ChatUserState extends State<ChatUserList> {
       return GestureDetector(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return ChatDetailPage();
+            return ChatDetailPage(text: widget.text,imageUrl: widget.imageUrl,);
           }));
         },
         child: Container(

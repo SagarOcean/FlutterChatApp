@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatDetailAppBar extends StatelessWidget implements PreferredSizeWidget{
+  String text;
+  String imageUrl;
+
+  ChatDetailAppBar({@required this.text,@required this.imageUrl});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -21,7 +26,7 @@ class ChatDetailAppBar extends StatelessWidget implements PreferredSizeWidget{
               ),
               SizedBox(width: 2,),
               CircleAvatar(
-                backgroundImage: NetworkImage("https://wallpapercave.com/wp/wp4272495.jpg"),
+                backgroundImage: NetworkImage(imageUrl),
                 maxRadius: 20,
               ),
               SizedBox(width: 12,),
@@ -30,7 +35,7 @@ class ChatDetailAppBar extends StatelessWidget implements PreferredSizeWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("Little Caprice",style: TextStyle(color: Colors.green,fontSize: 12),),
+                    Text(text,style: TextStyle(color: Colors.green,fontSize: 12),),
                     SizedBox(height: 6,),
                     Text("Online",style: TextStyle(color: Colors.green,fontSize: 12),),
                   ],

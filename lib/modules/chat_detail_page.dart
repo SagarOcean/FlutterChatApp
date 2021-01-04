@@ -11,7 +11,13 @@ enum MessageType{
   Receiver,
 }
 
+// ignore: must_be_immutable
 class ChatDetailPage extends StatefulWidget{
+  String text;
+  String imageUrl;
+  
+  ChatDetailPage({@required this.text, @required this.imageUrl});
+  
   @override
   _ChatDetailPageState createState() => _ChatDetailPageState();
 }
@@ -30,7 +36,6 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     SendMenuItems(color: Colors.amber, iconData: Icons.image, text: "Photos & Videos"),
     SendMenuItems(color: Colors.blue, iconData: Icons.insert_drive_file, text: "Documents"),
     SendMenuItems(color: Colors.orange, iconData: Icons.music_note, text: "Audio"),
-    SendMenuItems(color: Colors.green, iconData: Icons.location_on, text: "Location"),
     SendMenuItems(color: Colors.purple, iconData: Icons.person, text: "Contacts"),
 
   ];
@@ -41,7 +46,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         builder: (context){
           return Expanded(
             child: Container(
-              height: MediaQuery.of(context).size.height/1.5,
+              height: MediaQuery.of(context).size.height/2,
               color: Color(0xff737373),
               child: Container(
                 decoration: BoxDecoration(
@@ -95,7 +100,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ChatDetailAppBar(),
+      appBar: ChatDetailAppBar(text: widget.text,imageUrl: widget.imageUrl,),
       body: Stack(
         children: <Widget>[
           ListView.builder(
