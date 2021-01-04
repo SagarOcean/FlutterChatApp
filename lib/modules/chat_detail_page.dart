@@ -18,12 +18,12 @@ class ChatDetailPage extends StatefulWidget{
 
 class _ChatDetailPageState extends State<ChatDetailPage> {
   List<ChatMessage> chatMessage=[
-    ChatMessage(message: "Hii Little", type: MessageType.Receiver),
-    ChatMessage(message: "May i fuck you", type: MessageType.Receiver),
-    ChatMessage(message: "yeah sure", type: MessageType.Sender),
-    ChatMessage(message: "Then where should we meet !!!", type: MessageType.Receiver),
-    ChatMessage(message: "WhereEver you want babe...", type: MessageType.Sender),
-    ChatMessage(message: "Ok then I will meet you in your Home :)", type: MessageType.Receiver),
+    ChatMessage(message: "Hii dear :)", type: MessageType.Receiver),
+    ChatMessage(message: "How r u", type: MessageType.Receiver),
+    ChatMessage(message: "i'm good what about u!!!!", type: MessageType.Sender),
+    ChatMessage(message: "i'm fine  :)", type: MessageType.Receiver),
+    ChatMessage(message: "Can we meet tomorrow ", type: MessageType.Sender),
+    ChatMessage(message: "yeah sure. :) I will meet you in your Home :)", type: MessageType.Receiver),
   ];
 
   List<SendMenuItems> menuItems = [
