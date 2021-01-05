@@ -8,11 +8,23 @@ class MainPage extends StatefulWidget{
 }
 
 class _MainPageState extends State<MainPage> {
+  int _current_index =0;
+  final tabs = [
+    ChatPage(),
+    Center(child: Text("Groups"),),
+    Center(child: Text("Profile"),),
+  ];
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index){
+            setState(() {
+              _current_index = index;
+            });
+        },
+        currentIndex: _current_index,
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.grey.shade400,
         selectedLabelStyle: TextStyle(
@@ -26,7 +38,7 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(icon: Icon(Icons.account_circle),title: Text("Profile")),
         ],
       ),
-      body: ChatPage(),
+      body: tabs[_current_index],
     );
   }
 }

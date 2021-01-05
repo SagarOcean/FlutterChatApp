@@ -29,7 +29,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     ChatMessage(message: "i'm good what about u!!!!", type: MessageType.Sender),
     ChatMessage(message: "i'm fine  :)", type: MessageType.Receiver),
     ChatMessage(message: "Can we meet tomorrow ", type: MessageType.Sender),
-    ChatMessage(message: "yeah sure. :) I will meet you in your Home :)", type: MessageType.Receiver),
+    ChatMessage(message: "yeah sure. :) I will meet you at your Home :)", type: MessageType.Receiver),
   ];
 
   List<SendMenuItems> menuItems = [
@@ -100,7 +100,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ChatDetailAppBar(text: widget.text,imageUrl: widget.imageUrl,),
+      appBar: ChatDetailAppBar(text: widget.text,imageUrl: widget.imageUrl ,),
       body: Stack(
         children: <Widget>[
           ListView.builder(
